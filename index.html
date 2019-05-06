@@ -181,7 +181,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享的启程/">技术分享的启程</a></li></ul>
+                        
                     </div>
                 </section>
                 
@@ -257,125 +257,6 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
       <div class="body-wrap">
-  
-    <article id="post-我个人博客的第一篇博客，哈哈哈" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/06/我个人博客的第一篇博客，哈哈哈/" class="article-date">
-      <time datetime="2019-05-06T01:25:16.000Z" itemprop="datePublished">2019-05-06</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/06/我个人博客的第一篇博客，哈哈哈/">我个人博客的第一篇博客，哈哈哈</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>什么是Hexo?</p>
-<p>Hexo官网中说是这么描述的：A fast, simple &amp; powerful blog framework,即:一个快速、简单且强大的博客快速生产工具。它的简单体现在你完全有可能在30分钟内就生成属于你的个人博客。而它的强大体现在你对细节的调整上完全有可能花上一天的时间。<br>一、巧妇难为无米之炊:准备搭建环境<br>1.安装node.js</p>
-<p>Node.js 的实质是一个JavaScript运行环境,这里我们主要使用它来生成我们博客的静态页面。从官网下载最新的安装包进行默认安装就好。安装过程略。<br>2.安装git环境</p>
-<p>git是最流行的分布式版本控制系统，我们使用它主要是与github进行交互。安装git使用默认选项安装即可，安装过程略。如果你还对git不是特别熟悉，推荐一个学习git的教程:传送门<br>3.注册github</p>
-<p>github就不用说了吧，它是一个面向开源及私有软件项目的托管平台。几乎所有的程序员都听说过它的大名。就正常注册一个账号就好了。</p>
-<p>注册号以后首先给我们的账号添加本机的SSH，具体方法及原因在这篇文章已经有了详细说明，并且方法也很简单<br>二、上正菜：开始搭建博客</p>
-<p>环境都准备好后，我们就可以开始安装博客了:</p>
-<p>1.创建文件夹</p>
-<p>在本地新建一个文件夹用于存放我们的博客，并且右键菜单选择Git Bash Here,然后在Git Bash里输入：</p>
-<pre><code>npm install hexo
-
-hexo init  --初始化hexo环境,这时会在目录下自动生成hexo的文件
-
-npm install --安装npm依赖包
-
-hexo generate --生成静态页面
-
-hexo server --生成本地服务
-</code></pre><p>2.连接本地与远程github仓库</p>
-<h6 id="打开本地博客的文件夹，打开-config-yml进行编辑"><a href="#打开本地博客的文件夹，打开-config-yml进行编辑" class="headerlink" title="打开本地博客的文件夹，打开_config.yml进行编辑"></a>打开本地博客的文件夹，打开<strong>_config.yml</strong>进行编辑</h6><pre><code>deploy:
-
-type: git
-
-repo: git@github.com:yourname/yourname.github.io.git -- 项目地址
-
-branch: master
-</code></pre><h6 id="后在GitBash中执行"><a href="#后在GitBash中执行" class="headerlink" title="后在GitBash中执行"></a>后在GitBash中执行</h6><pre><code>npm install hexo-deployer-git --save
-
-hexo deploy
-</code></pre><h3 id="Hexo的基本命令"><a href="#Hexo的基本命令" class="headerlink" title="Hexo的基本命令"></a>Hexo的基本命令</h3><pre><code>hexo generate --生成个人博客所需的静态页面
-
-hexo server --本地预览
-
-hexo deploy --部署我们的个人博客
-
-hexo clean --清除缓存
-</code></pre><p>缩写</p>
-<pre><code>hexo g --generate
-
-hexo s --server
-
-hexo d --deploy
-</code></pre><p>写文章的需要用到下面的命令</p>
-<pre><code>hexo new &quot;postName&quot; --新建文章
-
-hexo new page &quot;pageName&quot; --新建页面
-
-hexo s --debug
-</code></pre><p>每次部署的步骤是</p>
-<pre><code>hexo clean
-
-hexo generate
-
-hexo deploy
-</code></pre><p>hexo init 出来的文件各自的作用如下:</p>
-<pre><code>`----------- | +-- .deploy #hexo deploy生成的文件 | +-- node_modules #npm组件 | +-- public #生成的静态网页文件 | +--scaffolds #模板 | +-- source #博客正文和其他源文件 | | +-- _posts #我们自己写的文章以md结尾 | +-- themes #主题 | +-- _config.yml #全局配置文件 | `-- package.json #定义了hexo所需要的各种模块
-</code></pre><p>5.配置文件</p>
-<pre><code># Hexo Configuration ## Docs: http://hexo.io/docs/configuration.html ## Source: https://github.com/hexojs/hexo/ # Site #站点信息 title: #标题 subtitle: #副标题 description: #站点描述，给搜索引擎看的 author: #作者 email: #电子邮箱 language: zh-CN #语言 # URL #链接格式 url: #网址 root: / #根目录 permalink: :year/:month/:day/:title/ #文章的链接格式 tag_dir: tags #标签目录 archive_dir: archives #存档目录 category_dir: categories #分类目录 code_dir: downloads/code permalink_defaults: # Directory #目录 source_dir: source #源文件目录 public_dir: public #生成的网页文件目录 # Writing #写作 new_post_name: :title.md #新文章标题 default_layout: post #默认的模板，包括 post、page、photo、draft（文章、页面、照片、草稿） titlecase: false #标题转换成大写 external_link: true #在新选项卡中打开连接 filename_case: 0 render_drafts: false post_asset_folder: false relative_link: false highlight: #语法高亮 enable: true #是否启用 line_number: true #显示行号 tab_replace: # Category &amp; Tag #分类和标签 default_category: uncategorized #默认分类 category_map: tag_map: # Archives 2: 开启分页 1: 禁用分页 0: 全部禁用 archive: 2 category: 2 tag: 2 # Server #本地服务器 port: 4000 #端口号 server_ip: localhost #IP 地址 logger: false logger_format: dev # Date / Time format #日期时间格式 date_format: YYYY-MM-DD #参考http://momentjs.com/docs/#/displaying/format/ time_format: H:mm:ss # Pagination #分页 per_page: 10 #每页文章数，设置成 0 禁用分页 pagination_dir: page # Disqus #Disqus评论，替换为多说 disqus_shortname: # Extensions #拓展插件 theme: landscape-plus #主题 exclude_generator: plugins: #插件，例如生成 RSS 和站点地图的 - hexo-generator-feed - hexo-generator-sitemap # Deployment #部署，将 lmintlcx 改成用户名 deploy: type: git repo: github创库地址.git branch: master
-</code></pre><hr>
-<p>作者：catalinaLi<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/a3212/article/details/77099492" target="_blank" rel="noopener">https://blog.csdn.net/a3212/article/details/77099492</a> </p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享的启程/">技术分享的启程</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
