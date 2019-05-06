@@ -5,14 +5,18 @@
   
   <title>我个人博客的第一篇博客，哈哈哈... | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="hexo搭建博客在本地新建一个文件夹用于存放我们的博客，并且右键菜单选择Git Bash Here,然后在Git Bash里输入： npm install hexo 1 2 3 然后回车，如图： buildHexo_1 我在执行这个的时候出现了下图的警告,但是并不影响我们的安装，不用理会它。 buildHexo_5 如果没有输出err之类的错误并且目录下多了一个node_modules文件夹，那这">
+<meta name="keywords" content="技术分享的启程">
+<meta property="og:type" content="article">
 <meta property="og:title" content="我个人博客的第一篇博客，哈哈哈...">
 <meta property="og:url" content="http://yoursite.com/2019/05/06/我个人博客的第一篇博客，哈哈哈/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="hexo搭建博客在本地新建一个文件夹用于存放我们的博客，并且右键菜单选择Git Bash Here,然后在Git Bash里输入： npm install hexo 1 2 3 然后回车，如图： buildHexo_1 我在执行这个的时候出现了下图的警告,但是并不影响我们的安装，不用理会它。 buildHexo_5 如果没有输出err之类的错误并且目录下多了一个node_modules文件夹，那这">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-06T01:25:16.970Z">
+<meta property="og:updated_time" content="2019-05-06T01:41:19.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我个人博客的第一篇博客，哈哈哈...">
+<meta name="twitter:description" content="hexo搭建博客在本地新建一个文件夹用于存放我们的博客，并且右键菜单选择Git Bash Here,然后在Git Bash里输入： npm install hexo 1 2 3 然后回车，如图： buildHexo_1 我在执行这个的时候出现了下图的警告,但是并不影响我们的安装，不用理会它。 buildHexo_5 如果没有输出err之类的错误并且目录下多了一个node_modules文件夹，那这">
   
   
   
@@ -77,13 +81,238 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="hexo搭建博客"><a href="#hexo搭建博客" class="headerlink" title="hexo搭建博客"></a>hexo搭建博客</h3><p>在本地新建一个文件夹用于存放我们的博客，并且右键菜单选择Git Bash Here,然后在Git Bash里输入：</p>
+<p>npm install hexo</p>
+<pre><code>1
+2
+3
+</code></pre><p>然后回车，如图：</p>
+<p>buildHexo_1</p>
+<p>我在执行这个的时候出现了下图的警告,但是并不影响我们的安装，不用理会它。</p>
+<p>buildHexo_5</p>
+<p>如果没有输出err之类的错误并且目录下多了一个node_modules文件夹，那这步就算成功了</p>
+<p>buildHexo_6</p>
+<p>2.执行hexo命令</p>
+<p>依次执行以下3个命令:</p>
+<p>hexo init  –初始化hexo环境,这时会在目录下自动生成hexo的文件</p>
+<p>npm install –安装npm依赖包</p>
+<p>hexo generate –生成静态页面</p>
+<p>hexo server –生成本地服务</p>
+<pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+</code></pre><p>好了，这时候我们打开浏览器输入<a href="http://localhost:4000看看可不可以访问。如果默认的hexo博客出现，那么恭喜你，你已经搭建好了自己的博客，接下来我们就要将它发布到网上。" target="_blank" rel="noopener">http://localhost:4000看看可不可以访问。如果默认的hexo博客出现，那么恭喜你，你已经搭建好了自己的博客，接下来我们就要将它发布到网上。</a></p>
+<p>buildHexo_11</p>
+<p>3.可能遇到的报错:</p>
+<pre><code>日志报错
+</code></pre><p>这个报错一般是由于在命令执行中用户使用Ctrl+C强制中断了命令的执行，导致log中记录已经执行，但实际没有执行完成。解决办法:删除图中路径下的.log文件</p>
+<p>buildHexo_7</p>
+<pre><code>在非空文件夹下执行hexo init命令
+</code></pre><p>hexo init这个命令是自动生成hexo目录时使用的命令，使用他有一个前提是必须是空文件夹，如果出现了这个错误，把所有文件删除就行。如果还是报错，别着急，看看是不是有隐藏文件没有删除。</p>
+<p>buildHexo_8</p>
+<pre><code>hexo命令未找到
+</code></pre><p>有的同学可能会出现在执行hexo命令时出现conmand not found的提示，这是由于hexo没有配到环境变量中，只需要手动配置一下就好了，这里演示一下win7的配置方式，其他系统也差不多，自行百度就好:</p>
+<p>1.找到并进入根目录下node_modules文件夹,这时我们发现里面有很多文件夹，找到hexo文件夹,这里我们可以看到一个bin文件夹，进到bin目录下，复制当前路径:</p>
+<p>buildHexo_9</p>
+<p>2.右键我的电脑–&gt;高级系统设置–&gt;高级–&gt;环境变量。在系统变量那栏找到Path并双击这行,在弹出的编辑系统变量这栏的变量值的最后先输入一个分号；表示与前一个变量隔开,然后再把刚才复制的hexo路径添加到分号后面。</p>
+<p>buildHexo_10<br>三、万事具备，只欠东风：将本地博客发布到网络上</p>
+<p>这时候就要用到了我们的github：</p>
+<p>1.创建远程仓库</p>
+<p>新建一个跟自己账号名字一样的空仓库，如图：</p>
+<p>buildHexo_2</p>
+<p>buildHexo_3</p>
+<p>2.连接本地与远程github仓库</p>
+<p>打开本地博客的文件夹，打开<strong>_config.yml</strong>进行编辑</p>
+<p>buildHexo_4</p>
+<p>翻到文件最下方，将deploy的选项改成以下的形式，并将yournmae修改为你自己的名称：</p>
+<p>deploy:</p>
+<p>type: git</p>
+<p>repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:yourname/yourname.github.io.git</p>
+<p>branch: master</p>
+<pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+</code></pre><p>然后在GitBash中执行</p>
+<p>npm install hexo-deployer-git –save</p>
+<pre><code>1
+2
+3
+</code></pre><p>这时候，我们再最后执行一句</p>
+<p>hexo deploy</p>
+<pre><code>1
+2
+3
+</code></pre><p>就可以在浏览器中访问<a href="http://yourname.github.io/来进入你的博客啦" target="_blank" rel="noopener">http://yourname.github.io/来进入你的博客啦</a></p>
+<p>大功告成！！<br>四、一鼓作气：详细了解Hexo</p>
+<p>博客已经可以访问了，但我相信大家对Hexo还是一头雾水，现在我们来深入学习一下Hexo:</p>
+<p>1.Hexo的基本命令</p>
+<p>hexo generate –生成个人博客所需的静态页面</p>
+<p>hexo server –本地预览</p>
+<p>hexo deploy –部署我们的个人博客</p>
+<p>hexo clean –清除缓存</p>
+<pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+</code></pre><p>这几个命令都能用首字母缩写完成</p>
+<p>hexo g –generate</p>
+<p>hexo s –server</p>
+<p>hexo d –deploy</p>
+<pre><code>1
+2
+3
+4
+5
+6
+7
+</code></pre><p>2.写文章的需要用到下面的命令</p>
+<p>hexo new “postName” –新建文章</p>
+<p>hexo new page “pageName” –新建页面</p>
+<pre><code>1
+2
+3
+4
+5
+</code></pre><p>编辑我们的博客的时候可以使用</p>
+<p>hexo s –debug</p>
+<pre><code>1
+2
+3
+</code></pre><p>然后访问<a href="http://localhost:4000/来进入调试模式，更改了配置或文章后随时刷新页面来查看效果。" target="_blank" rel="noopener">http://localhost:4000/来进入调试模式，更改了配置或文章后随时刷新页面来查看效果。</a></p>
+<p>Hexo的文章支持的是MarkDown语法。网上有很多资料，这里提供一个传送门。</p>
+<p>3.我们每次部署的步骤是</p>
+<p>hexo clean</p>
+<p>hexo generate</p>
+<p>hexo deploy</p>
+<pre><code>1
+2
+3
+4
+5
+6
+7
+</code></pre><p>后两步可以简写为hexo g -d，另外我们也可以使用hexo help来查看hexo命令帮助</p>
+<p>4.目录结构说明</p>
+<p>hexo init 出来的文件各自的作用如下:</p>
+<p>`———–</p>
+<p>|  +– .deploy      #hexo deploy生成的文件</p>
+<p>|  +– node_modules  #npm组件</p>
+<p>|  +– public        #生成的静态网页文件</p>
+<p>|  +–scaffolds      #模板</p>
+<p>|  +– source        #博客正文和其他源文件</p>
+<p>|  |  +– _posts    #我们自己写的文章以md结尾</p>
+<p>|  +– themes        #主题</p>
+<p>|  +– _config.yml  #全局配置文件</p>
+<p>|  `– package.json  #定义了hexo所需要的各种模块</p>
+<pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</code></pre><p>5.配置文件</p>
+<p>搭建好博客后，我们的各种细节配置基本都是在配置文件中完成的，Hexo中的配置文件一共分2中，在文件夹跟目录下的_config.yml叫做站点配置文件,同样的文件名我们可以在theme文件夹下的主题文件夹里面也找的。而主题文件夹下的_config.yml叫做主题配置文件。这里说明一下站点配置文件：</p>
+<h1 id="Hexo-Configuration"><a href="#Hexo-Configuration" class="headerlink" title="Hexo Configuration"></a>Hexo Configuration</h1><h2 id="Docs-http-hexo-io-docs-configuration-html"><a href="#Docs-http-hexo-io-docs-configuration-html" class="headerlink" title="Docs: http://hexo.io/docs/configuration.html"></a>Docs: <a href="http://hexo.io/docs/configuration.html" target="_blank" rel="noopener">http://hexo.io/docs/configuration.html</a></h2><h2 id="Source-https-github-com-hexojs-hexo"><a href="#Source-https-github-com-hexojs-hexo" class="headerlink" title="Source: https://github.com/hexojs/hexo/"></a>Source: <a href="https://github.com/hexojs/hexo/" target="_blank" rel="noopener">https://github.com/hexojs/hexo/</a></h2><h1 id="Site-站点信息"><a href="#Site-站点信息" class="headerlink" title="Site #站点信息"></a>Site #站点信息</h1><p>title:  #标题</p>
+<p>subtitle:  #副标题</p>
+<p>description:  #站点描述，给搜索引擎看的</p>
+<p>author:  #作者</p>
+<p>email:  #电子邮箱</p>
+<p>language: zh-CN #语言</p>
+<h1 id="URL-链接格式"><a href="#URL-链接格式" class="headerlink" title="URL #链接格式"></a>URL #链接格式</h1><p>url:  #网址</p>
+<p>root: / #根目录</p>
+<p>permalink: :year/:month/:day/:title/ #文章的链接格式</p>
+<p>tag_dir: tags #标签目录</p>
+<p>archive_dir: archives #存档目录</p>
+<p>category_dir: categories #分类目录</p>
+<p>code_dir: downloads/code</p>
+<p>permalink_defaults:</p>
+<h1 id="Directory-目录"><a href="#Directory-目录" class="headerlink" title="Directory #目录"></a>Directory #目录</h1><p>source_dir: source #源文件目录</p>
+<p>public_dir: public #生成的网页文件目录</p>
+<h1 id="Writing-写作"><a href="#Writing-写作" class="headerlink" title="Writing #写作"></a>Writing #写作</h1><p>new_post_name: :title.md #新文章标题</p>
+<p>default_layout: post #默认的模板，包括 post、page、photo、draft（文章、页面、照片、草稿）</p>
+<p>titlecase: false #标题转换成大写</p>
+<p>external_link: true #在新选项卡中打开连接</p>
+<p>filename_case: 0</p>
+<p>render_drafts: false</p>
+<p>post_asset_folder: false</p>
+<p>relative_link: false</p>
+<p>highlight: #语法高亮</p>
+<p>enable: true #是否启用</p>
+<p>line_number: true #显示行号</p>
+<p>tab_replace:</p>
+<h1 id="Category-amp-Tag-分类和标签"><a href="#Category-amp-Tag-分类和标签" class="headerlink" title="Category &amp; Tag #分类和标签"></a>Category &amp; Tag #分类和标签</h1><p>default_category: uncategorized #默认分类</p>
+<p>category_map:</p>
+<p>tag_map:</p>
+<h1 id="Archives"><a href="#Archives" class="headerlink" title="Archives"></a>Archives</h1><p>2: 开启分页</p>
+<p>1: 禁用分页</p>
+<p>0: 全部禁用</p>
+<p>archive: 2</p>
+<p>category: 2</p>
+<p>tag: 2</p>
+<h1 id="Server-本地服务器"><a href="#Server-本地服务器" class="headerlink" title="Server #本地服务器"></a>Server #本地服务器</h1><p>port: 4000 #端口号</p>
+<p>server_ip: localhost #IP 地址</p>
+<p>logger: false</p>
+<p>logger_format: dev</p>
+<h1 id="Date-Time-format-日期时间格式"><a href="#Date-Time-format-日期时间格式" class="headerlink" title="Date / Time format #日期时间格式"></a>Date / Time format #日期时间格式</h1><p>date_format: YYYY-MM-DD #参考<a href="http://momentjs.com/docs/#/displaying/format/" target="_blank" rel="noopener">http://momentjs.com/docs/#/displaying/format/</a></p>
+<p>time_format: H:mm:ss</p>
+<h1 id="Pagination-分页"><a href="#Pagination-分页" class="headerlink" title="Pagination #分页"></a>Pagination #分页</h1><p>per_page: 10 #每页文章数，设置成 0 禁用分页</p>
+<p>pagination_dir: page</p>
+<h1 id="Disqus-Disqus评论，替换为多说"><a href="#Disqus-Disqus评论，替换为多说" class="headerlink" title="Disqus #Disqus评论，替换为多说"></a>Disqus #Disqus评论，替换为多说</h1><p>disqus_shortname:</p>
+<h1 id="Extensions-拓展插件"><a href="#Extensions-拓展插件" class="headerlink" title="Extensions #拓展插件"></a>Extensions #拓展插件</h1><p>theme: landscape-plus #主题</p>
+<p>exclude_generator:</p>
+<p>plugins: #插件，例如生成 RSS 和站点地图的</p>
+<ul>
+<li><p>hexo-generator-feed</p>
+</li>
+<li><p>hexo-generator-sitemap</p>
+</li>
+</ul>
+<h1 id="Deployment-部署，将-lmintlcx-改成用户名"><a href="#Deployment-部署，将-lmintlcx-改成用户名" class="headerlink" title="Deployment #部署，将 lmintlcx 改成用户名"></a>Deployment #部署，将 lmintlcx 改成用户名</h1><p>deploy:</p>
+<p>type: git</p>
+<p>repo: github创库地址.git</p>
+<p>branch: master</p>
+<h2 id="有时候我们部署了以后自己博客的链接打不开-查看生成的静态文件也没有index-html-或者是各种奇怪的报错。这时候有可能是我们的站点配置文件-config-yml格式出现了问题。这时候不妨去一些YAML格式检测网站去检测一下格式是否正确-传送门。"><a href="#有时候我们部署了以后自己博客的链接打不开-查看生成的静态文件也没有index-html-或者是各种奇怪的报错。这时候有可能是我们的站点配置文件-config-yml格式出现了问题。这时候不妨去一些YAML格式检测网站去检测一下格式是否正确-传送门。" class="headerlink" title="有时候我们部署了以后自己博客的链接打不开,查看生成的静态文件也没有index.html,或者是各种奇怪的报错。这时候有可能是我们的站点配置文件_config.yml格式出现了问题。这时候不妨去一些YAML格式检测网站去检测一下格式是否正确:传送门。"></a>有时候我们部署了以后自己博客的链接打不开,查看生成的静态文件也没有index.html,或者是各种奇怪的报错。这时候有可能是我们的站点配置文件_config.yml格式出现了问题。这时候不妨去一些YAML格式检测网站去检测一下格式是否正确:传送门。</h2><p>作者：catalinaLi<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/a3212/article/details/77099492" target="_blank" rel="noopener">https://blog.csdn.net/a3212/article/details/77099492</a> </p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/06/我个人博客的第一篇博客，哈哈哈/" data-id="cjvbovcyf0001ucuft3sc4f00" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/06/我个人博客的第一篇博客，哈哈哈/" data-id="cjvbpde9f000004ufeciz2mvz" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享的启程/">技术分享的启程</a></li></ul>
+
     </footer>
   </div>
   
