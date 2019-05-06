@@ -269,7 +269,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/06/react-问题解答/">react 问题解答</a>
+      <a class="article-title" href="/2019/05/06/react-问题解答/">react</a>
     </h1>
   
 
@@ -279,16 +279,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>react 手册</p>
+        <p>react 特点</p>
 <ul>
-<li>声名式开发     ___  命令式开发</li>
+<li>声名式开发    </li>
 <li>可以与其他框架并存</li>
 <li>组件化</li>
 <li>单向流数据</li>
 <li>视图层框架</li>
 <li>函数式编程</li>
 </ul>
-<h5 id="工具：-代理服务器"><a href="#工具：-代理服务器" class="headerlink" title="工具： 代理服务器"></a>工具： 代理服务器</h5><p>  charles 工具</p>
 <h5 id="props-state-render"><a href="#props-state-render" class="headerlink" title="props, state render"></a>props, state render</h5><pre><code>state 和 props 中数据改变render函数 执行
 父组件的render函数重新执行的时候子组件的render 也会执行
 </code></pre><h5 id="虚拟DOM-（js-对象，js-和-js-比较不耗性能，-真实dom-对比比较耗性能-）"><a href="#虚拟DOM-（js-对象，js-和-js-比较不耗性能，-真实dom-对比比较耗性能-）" class="headerlink" title="虚拟DOM （js 对象，js 和 js 比较不耗性能， 真实dom 对比比较耗性能 ）"></a>虚拟DOM （js 对象，js 和 js 比较不耗性能， 真实dom 对比比较耗性能 ）</h5><pre><code>1. state数据
@@ -335,7 +334,7 @@ return React.createELement(&apos;div&quot;, {}, React.createELement(&apos;span&a
 </code></pre><h5 id="虚拟DOM-diff-（原始虚拟DOM和新的虚拟DOM的区别比对）"><a href="#虚拟DOM-diff-（原始虚拟DOM和新的虚拟DOM的区别比对）" class="headerlink" title="虚拟DOM  diff （原始虚拟DOM和新的虚拟DOM的区别比对）"></a>虚拟DOM  diff （原始虚拟DOM和新的虚拟DOM的区别比对）</h5><pre><code>1. 同层比对
 2. 不能用 key={index}作为key 值 （item,用它本身做key值）
 3. setdata 可以吧多次比对合并成一次比对
-</code></pre><h5 id="react-ref-获取dom-（onChange）"><a href="#react-ref-获取dom-（onChange）" class="headerlink" title="react ref (获取dom) （onChange）"></a>react ref (获取dom) （onChange）</h5><pre><code>&lt;input className=&quot;search-input fl&quot; type=&quot;search&quot; onChange={this.handlechange.bind(this)}  onKeyUp={this.onKeyup.bind(this)}/&gt;
+</code></pre><h5 id="监听获取输入同步-react-ref-获取dom-（onChange）"><a href="#监听获取输入同步-react-ref-获取dom-（onChange）" class="headerlink" title="监听获取输入同步  react ref (获取dom) （onChange）"></a>监听获取输入同步  react ref (获取dom) （onChange）</h5><pre><code>&lt;input className=&quot;search-input fl&quot; type=&quot;search&quot; onChange={this.handlechange.bind(this)}  onKeyUp={this.onKeyup.bind(this)}/&gt;
 
 
 handlechange(event) {
@@ -356,41 +355,18 @@ onKeyup(e) {
 &lt;form className=&quot;form-menu&quot; ref=&quot;form&quot;&gt;
 &lt;label&gt;&lt;i&gt;*&lt;/i&gt;作品名称:&lt;/label&gt;
 &lt;input className=&quot;input-border&quot; defaultValue={title} ref=&quot;title&quot;/&gt;
-&lt;br/&gt;
-&lt;label&gt;&lt;i&gt;*&lt;/i&gt;作者名称:&lt;/label&gt;
-&lt;input className=&quot;input-border&quot; defaultValue={author} ref=&quot;author&quot;/&gt;
-&lt;br/&gt;
-&lt;label&gt;&lt;i&gt;*&lt;/i&gt;小说链接:&lt;/label&gt;
-&lt;input className=&quot;input-border&quot; defaultValue={url} ref=&quot;url&quot;/&gt;
-&lt;br/&gt;
-&lt;label&gt;图片链接:&lt;/label&gt;
-&lt;input className=&quot;input-border&quot; defaultValue ={img} ref=&quot;img&quot;/&gt;
-&lt;br/&gt;
-&lt;label&gt;小说介绍:&lt;/label&gt;
-&lt;textarea className=&quot;textarea-border&quot; defaultValue={introduce} ref=&quot;introduce&quot;/&gt;
-&lt;br/&gt;
-
 &lt;button type=&quot;button&quot; className=&quot;submit&quot; onClick={this.submitFun.bind(this)}&gt;{this.state.modalTitle}&lt;/button&gt;
 &lt;/form&gt;
 
  // 表单提交
     submitFun() {
-        const regular = /[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?/;
         const {formData} = this.state;
-        const {title, author, url, img, introduce } = this.refs;
+        const { title } = this.refs;
         const inputData = {};
         if (title.value.length &lt; 2) {
             this.setState(() =&gt; ({hint: &apos;作品名称不能少于2个字符&apos; }));
-        } else if (author.value.length &lt; 2){
-            this.setState(() =&gt; ({hint: &apos;作家名称不能少于2个字符&apos; }));
-        } else if( !(regular.test(url.value))){
-            this.setState(() =&gt; ({hint: &apos;地址格式不正确&apos; }));
         } else {
             inputData.title =  title.value;
-            inputData.author = author.value;
-            inputData.url =  url.value;
-            inputData.img =  img.value;
-            inputData.introduce =  introduce.value;
             if(formData.id) {
                 inputData.id = formData.id;
                 this.edit(BACKEND_UPDATA_URL, inputData);
@@ -445,11 +421,10 @@ onKeyup(e) {
     list: [...prevState.list, inputValue],
     inputValue: &apos; &apos;
 }), () =&gt; {
-    // 回调方法执行完数据存储后执行
+    // 回调方法执行完数据存储后执行可以获取刚才同步的数据
 })
-</code></pre><h5 id="生命周期函数（组件自动调用的函数）"><a href="#生命周期函数（组件自动调用的函数）" class="headerlink" title="生命周期函数（组件自动调用的函数）"></a>生命周期函数（组件自动调用的函数）</h5><p><img src="https://images2015.cnblogs.com/blog/588767/201612/588767-20161205190022429-1074951616.jpg" alt="image"></p>
-<pre><code>1. constructor()
-    es6 语法自带的函数
+</code></pre><h5 id="生命周期函数（组件自动调用的函数）"><a href="#生命周期函数（组件自动调用的函数）" class="headerlink" title="生命周期函数（组件自动调用的函数）"></a>生命周期函数（组件自动调用的函数）</h5><pre><code>1. constructor()
+    es6 语法自带构造函数
 
 组件挂载
 
