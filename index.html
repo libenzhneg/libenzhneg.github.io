@@ -179,7 +179,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/功能/">功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小程序/">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享/">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享的启程/">技术分享的启程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/配置/">配置</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GRASP/">GRASP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/功能/">功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小程序/">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享/">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享的启程/">技术分享的启程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/配置/">配置</a></li></ul>
                     </div>
                 </section>
                 
@@ -251,6 +251,96 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-GRASP-九大原则简单理解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/07/GRASP-九大原则简单理解/" class="article-date">
+      <time datetime="2019-05-07T03:11:13.000Z" itemprop="datePublished">2019-05-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/07/GRASP-九大原则简单理解/">GRASP 九大原则简单理解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="GRASP-（通用职责分配软件设计模式）"><a href="#GRASP-（通用职责分配软件设计模式）" class="headerlink" title="GRASP （通用职责分配软件设计模式）"></a>GRASP （通用职责分配软件设计模式）</h3><h3 id="高内聚、低耦合（High-Cohesion、Low-Coupling）"><a href="#高内聚、低耦合（High-Cohesion、Low-Coupling）" class="headerlink" title="高内聚、低耦合（High Cohesion、Low Coupling）"></a>高内聚、低耦合（High Cohesion、Low Coupling）</h3><pre><code>高内聚和低耦合是软件开发中最重要的原则，其他模式也是以高内聚、低耦合原则为中心的。
+
+高内聚和低耦合往往是伴随在一起出现的。低耦合其实就是两个类或模块之间联系的紧密程度，高内聚就是类中方法和方法之间的职责相关性。
+要想避免低内聚、高耦合，解决办法就是既要降低因为一个类的变化而对另一个类产生的影响，又要保持类或模块是有重点的、可理的、 可管理的并且支持低耦合的，也就是更加精确的给一个类或者模块分配职责。
+
+高内聚   
+   一个类具有很多紧密相关的职责，而且只完成有限的功能，则这个类就具有高内聚性
+
+低耦合
+    低耦合模式的意思就是要我们尽可能地减少类之间的连接，降低因为一个类的变化而对另一个类产生的影响。
+</code></pre><h3 id="信息专家-Information-Expert"><a href="#信息专家-Information-Expert" class="headerlink" title="信息专家(Information Expert)"></a>信息专家(Information Expert)</h3><pre><code>将职责分配给拥有履行一个职责所必需信息的类，即信息专家
+如何实现高内聚，也就是如何给类分配职责？分配给具有完成该职责信息的那个类。
+</code></pre><h3 id="创建者（Creator）"><a href="#创建者（Creator）" class="headerlink" title="创建者（Creator）"></a>创建者（Creator）</h3><pre><code>符合下面的一个或者多个条件，则可将创建类A实例的职责分配给类B：
+
+B包含A；
+B聚合A；
+B拥有初始化A的数据并在创建类A的实例时将数据传递给类A；
+B记录A的实例；
+B频繁使用A。
+</code></pre><h3 id="控制器（Controller）"><a href="#控制器（Controller）" class="headerlink" title="控制器（Controller）"></a>控制器（Controller）</h3><pre><code>应该由哪个类来处理系统操作呢？原则就是把系统事件的处理职责分配给控制器类，这个控制器类就相当于MVC中的C。
+一个控制器应当把要完成的功能委托给其他对象，它只负责协调和控制，本身不完成太多的功能。它可以将用户界面所提交的请求转发给其他类来处理，控制器可以重用，且不能包含太多业务逻辑，
+</code></pre><h3 id="多态（Polymorphism）"><a href="#多态（Polymorphism）" class="headerlink" title="多态（Polymorphism）"></a>多态（Polymorphism）</h3><pre><code>根据类型的不同而发生变化的行为的定义职责
+</code></pre><h3 id="纯虚构模式（Pure-Fabrication）"><a href="#纯虚构模式（Pure-Fabrication）" class="headerlink" title="纯虚构模式（Pure Fabrication）"></a>纯虚构模式（Pure Fabrication）</h3><pre><code>将一组高内聚的职责分配给一个虚构的或处理方便的“行为”类，它并不是问题域中的概念，而是虚构的事务，以达到支持高内聚、低耦合和重用的目的。
+
+纯虚构模式用于解决高内聚和低耦合之间的矛盾，它要求将一部分类的职责转移到纯虚构类中，在理想情况下，分配给这种虚构类的职责是为了达到高内聚和低耦合的目的。在实际操作过程中，纯虚构有很多种实现方式，例如将数据库操作的方法从数据库实体类中剥离出来，形成专门的数据访问类，通过对类的分解来实现类的重用，新增加的数据访问类对应于数据持久化存储，它不是问题域中的概念，而是软件开发者为了处理方便而产生的虚构概念。纯虚构可以消除由于信息专家模式带来的低内聚和高耦合的坏设计，得到一个具有更好重用性的设计。在系统中引入抽象类或接口来提高系统的扩展性也可以认为是纯虚构模式的一种应用。纯虚构模式通常基于相关功能的划分，是一种以功能为中心的对象或行为对象。在很多设计模式中都体现了纯虚构模式，例如适配器模式、策略模式等等。
+</code></pre><h3 id="中介（Indirection）"><a href="#中介（Indirection）" class="headerlink" title="中介（Indirection）"></a>中介（Indirection）</h3><pre><code>可以独立的改变其他系列对象的交互（其他对象不需要相互了解）
+</code></pre><h3 id="防止变异（Protected-Variation）"><a href="#防止变异（Protected-Variation）" class="headerlink" title="防止变异（Protected Variation）"></a>防止变异（Protected Variation）</h3><pre><code>找出预计有变化或不稳定的元素，为其创建稳定的“接口”而分配职责。
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/设计模式/">设计模式</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GRASP/">GRASP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享/">技术分享</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-vue-实用功能" class="article article-type-post" itemscope itemprop="blogPost">
   
