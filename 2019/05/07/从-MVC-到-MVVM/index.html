@@ -15,13 +15,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="李本正技术博客">
-<meta property="og:url" content="http://yoursite.com/categories/小程序/index.html">
+<meta name="description" content="MVC 到 MVVM1. MVC：Model(模型)+View(视图)+controller(控制器)，主要是基于分层的目的，让彼此的职责分开工作方式： View =&amp;gt;  Controller  =&amp;gt; Model =&amp;gt;  View 2. MVVM：MVVM是把MVC里的Controller改成了ViewModel。Model+View+ViewModel。ViewModel 和">
+<meta name="keywords" content="技术分享,MVVM,MVC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从 MVC 到 MVVM 模式">
+<meta property="og:url" content="http://yoursite.com/2019/05/07/从-MVC-到-MVVM/index.html">
 <meta property="og:site_name" content="李本正技术博客">
+<meta property="og:description" content="MVC 到 MVVM1. MVC：Model(模型)+View(视图)+controller(控制器)，主要是基于分层的目的，让彼此的职责分开工作方式： View =&amp;gt;  Controller  =&amp;gt; Model =&amp;gt;  View 2. MVVM：MVVM是把MVC里的Controller改成了ViewModel。Model+View+ViewModel。ViewModel 和">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-07T06:50:34.494Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="李本正技术博客">
+<meta name="twitter:title" content="从 MVC 到 MVVM 模式">
+<meta name="twitter:description" content="MVC 到 MVVM1. MVC：Model(模型)+View(视图)+controller(控制器)，主要是基于分层的目的，让彼此的职责分开工作方式： View =&amp;gt;  Controller  =&amp;gt; Model =&amp;gt;  View 2. MVVM：MVVM是把MVC里的Controller改成了ViewModel。Model+View+ViewModel。ViewModel 和">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -53,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Category: 小程序 | 李本正技术博客</title>
+<title>从 MVC 到 MVVM 模式 | 李本正技术博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -63,10 +68,10 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
-        isCategory: true,
+        isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
         search: 
@@ -245,60 +250,171 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-从-MVC-到-MVVM" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2019/05/06/小程序方法总结/" class="archive-article-date">
-      <time datetime="2019-05-06T08:32:57.000Z" itemprop="datePublished">05-06</time>
+    <div class="article-meta">
+      <a href="/2019/05/07/从-MVC-到-MVVM/" class="article-date">
+      <time datetime="2019-05-07T06:27:58.000Z" itemprop="datePublished">2019-05-07</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/06/小程序方法总结/">小程序方法总结</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      从 MVC 到 MVVM 模式
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/小程序/">小程序</a><a class="article-category-link" href="/categories/小程序/前端框架/">前端框架</a>
+    <a class="article-category-link" href="/categories/理论知识/">理论知识</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小程序/">小程序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享/">技术分享</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/">MVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVVM/">MVVM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享/">技术分享</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="MVC-到-MVVM"><a href="#MVC-到-MVVM" class="headerlink" title="MVC 到 MVVM"></a>MVC 到 MVVM</h3><h4 id="1-MVC：Model-模型-View-视图-controller-控制器-，主要是基于分层的目的，让彼此的职责分开"><a href="#1-MVC：Model-模型-View-视图-controller-控制器-，主要是基于分层的目的，让彼此的职责分开" class="headerlink" title="1. MVC：Model(模型)+View(视图)+controller(控制器)，主要是基于分层的目的，让彼此的职责分开"></a>1. MVC：Model(模型)+View(视图)+controller(控制器)，主要是基于分层的目的，让彼此的职责分开</h4><pre><code>工作方式：
+View =&gt;  Controller  =&gt; Model =&gt;  View
+</code></pre><h4 id="2-MVVM：MVVM是把MVC里的Controller改成了ViewModel。Model-View-ViewModel。ViewModel-和-Mode-是双向绑定的"><a href="#2-MVVM：MVVM是把MVC里的Controller改成了ViewModel。Model-View-ViewModel。ViewModel-和-Mode-是双向绑定的" class="headerlink" title="2. MVVM：MVVM是把MVC里的Controller改成了ViewModel。Model+View+ViewModel。ViewModel 和 Mode 是双向绑定的"></a>2. MVVM：MVVM是把MVC里的Controller改成了ViewModel。Model+View+ViewModel。ViewModel 和 Mode 是双向绑定的</h4><pre><code>工作模式：
+View &lt;=&gt; ViewModel &lt;=&gt; Mode
+</code></pre><h4 id="3-View的变化会自动更新到ViewModel-ViewModel的变化也会自动同步到View上显示。这种自动同步是因为ViewModel中的属性实现了Observer-观察者模式设计模式中的行为型模式的一种-，当属性变更时都能触发对应的操作。"><a href="#3-View的变化会自动更新到ViewModel-ViewModel的变化也会自动同步到View上显示。这种自动同步是因为ViewModel中的属性实现了Observer-观察者模式设计模式中的行为型模式的一种-，当属性变更时都能触发对应的操作。" class="headerlink" title="3. View的变化会自动更新到ViewModel,ViewModel的变化也会自动同步到View上显示。这种自动同步是因为ViewModel中的属性实现了Observer(观察者模式设计模式中的行为型模式的一种)，当属性变更时都能触发对应的操作。"></a>3. View的变化会自动更新到ViewModel,ViewModel的变化也会自动同步到View上显示。这种自动同步是因为ViewModel中的属性实现了Observer(观察者模式设计模式中的行为型模式的一种)，当属性变更时都能触发对应的操作。</h4>
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/05/07/从-MVC-到-MVVM/">从 MVC 到 MVVM 模式</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Benzheng Li</a></p>
+        <p><span>发布时间:</span>2019-05-07, 14:27:58</p>
+        <p><span>最后更新:</span>2019-05-07, 14:50:34</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/07/从-MVC-到-MVVM/" title="从 MVC 到 MVVM 模式">http://yoursite.com/2019/05/07/从-MVC-到-MVVM/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/07/从-MVC-到-MVVM/　　作者: Benzheng Li" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2019/05/07/什么是面对对象思想/">
+                    什么是面对对象思想
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC-到-MVVM"><span class="toc-number">1.</span> <span class="toc-text">MVC 到 MVVM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-MVC：Model-模型-View-视图-controller-控制器-，主要是基于分层的目的，让彼此的职责分开"><span class="toc-number">1.1.</span> <span class="toc-text">1. MVC：Model(模型)+View(视图)+controller(控制器)，主要是基于分层的目的，让彼此的职责分开</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-MVVM：MVVM是把MVC里的Controller改成了ViewModel。Model-View-ViewModel。ViewModel-和-Mode-是双向绑定的"><span class="toc-number">1.2.</span> <span class="toc-text">2. MVVM：MVVM是把MVC里的Controller改成了ViewModel。Model+View+ViewModel。ViewModel 和 Mode 是双向绑定的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-View的变化会自动更新到ViewModel-ViewModel的变化也会自动同步到View上显示。这种自动同步是因为ViewModel中的属性实现了Observer-观察者模式设计模式中的行为型模式的一种-，当属性变更时都能触发对应的操作。"><span class="toc-number">1.3.</span> <span class="toc-text">3. View的变化会自动更新到ViewModel,ViewModel的变化也会自动同步到View上显示。这种自动同步是因为ViewModel中的属性实现了Observer(观察者模式设计模式中的行为型模式的一种)，当属性变更时都能触发对应的操作。</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"从 MVC 到 MVVM 模式　| 李本正技术博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2019/05/07/什么是面对对象思想/" title="下一篇: 什么是面对对象思想">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/07/从-MVC-到-MVVM/">从 MVC 到 MVVM 模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/07/什么是面对对象思想/">什么是面对对象思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/07/GRASP-九大原则简单理解/">GRASP 九大原则简单理解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/vue-实用功能/">vue 实用功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/react-项目配置/">react 项目配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/小程序方法总结/">小程序方法总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/react-问题解答/">react 基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/我个人博客的第一篇博客，哈哈哈/">我个人博客的第一篇博客，哈哈哈</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

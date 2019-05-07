@@ -179,7 +179,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GRASP/">GRASP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/功能/">功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小程序/">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享/">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享的启程/">技术分享的启程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/配置/">配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面对对象/">面对对象</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GRASP/">GRASP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM/">MVVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/功能/">功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小程序/">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享/">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享的启程/">技术分享的启程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/配置/">配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面对对象/">面对对象</a></li></ul>
                     </div>
                 </section>
                 
@@ -251,6 +251,73 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-从-MVC-到-MVVM" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/07/从-MVC-到-MVVM/" class="article-date">
+      <time datetime="2019-05-07T06:27:58.000Z" itemprop="datePublished">2019-05-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/07/从-MVC-到-MVVM/">从 MVC 到 MVVM 模式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="MVC-到-MVVM"><a href="#MVC-到-MVVM" class="headerlink" title="MVC 到 MVVM"></a>MVC 到 MVVM</h3><h4 id="1-MVC：Model-模型-View-视图-controller-控制器-，主要是基于分层的目的，让彼此的职责分开"><a href="#1-MVC：Model-模型-View-视图-controller-控制器-，主要是基于分层的目的，让彼此的职责分开" class="headerlink" title="1. MVC：Model(模型)+View(视图)+controller(控制器)，主要是基于分层的目的，让彼此的职责分开"></a>1. MVC：Model(模型)+View(视图)+controller(控制器)，主要是基于分层的目的，让彼此的职责分开</h4><pre><code>工作方式：
+View =&gt;  Controller  =&gt; Model =&gt;  View
+</code></pre><h4 id="2-MVVM：MVVM是把MVC里的Controller改成了ViewModel。Model-View-ViewModel。ViewModel-和-Mode-是双向绑定的"><a href="#2-MVVM：MVVM是把MVC里的Controller改成了ViewModel。Model-View-ViewModel。ViewModel-和-Mode-是双向绑定的" class="headerlink" title="2. MVVM：MVVM是把MVC里的Controller改成了ViewModel。Model+View+ViewModel。ViewModel 和 Mode 是双向绑定的"></a>2. MVVM：MVVM是把MVC里的Controller改成了ViewModel。Model+View+ViewModel。ViewModel 和 Mode 是双向绑定的</h4><pre><code>工作模式：
+View &lt;=&gt; ViewModel &lt;=&gt; Mode
+</code></pre><h4 id="3-View的变化会自动更新到ViewModel-ViewModel的变化也会自动同步到View上显示。这种自动同步是因为ViewModel中的属性实现了Observer-观察者模式设计模式中的行为型模式的一种-，当属性变更时都能触发对应的操作。"><a href="#3-View的变化会自动更新到ViewModel-ViewModel的变化也会自动同步到View上显示。这种自动同步是因为ViewModel中的属性实现了Observer-观察者模式设计模式中的行为型模式的一种-，当属性变更时都能触发对应的操作。" class="headerlink" title="3. View的变化会自动更新到ViewModel,ViewModel的变化也会自动同步到View上显示。这种自动同步是因为ViewModel中的属性实现了Observer(观察者模式设计模式中的行为型模式的一种)，当属性变更时都能触发对应的操作。"></a>3. View的变化会自动更新到ViewModel,ViewModel的变化也会自动同步到View上显示。这种自动同步是因为ViewModel中的属性实现了Observer(观察者模式设计模式中的行为型模式的一种)，当属性变更时都能触发对应的操作。</h4>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/理论知识/">理论知识</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/">MVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVVM/">MVVM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享/">技术分享</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-什么是面对对象思想" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -601,7 +668,7 @@ B频繁使用A。
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/设计模式/">设计模式</a><a class="article-category-link" href="/categories/设计模式/理论知识/">理论知识</a>
+    <a class="article-category-link" href="/categories/理论知识/">理论知识</a><a class="article-category-link" href="/categories/理论知识/设计模式/">设计模式</a>
     </div>
 
 
