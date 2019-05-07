@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Benzheng Li">
+
+
+
+<meta name="description" content="注意事项（报错）npm install -g cnpm --registry=https://registry.npm.taobao.org &amp;apos;react-scripts&amp;apos; 不是内部或外部命令，也不是可运行的程序 或批处理文件。      // 有时在安装完其他组件后，再次运行 npm start 命令时会报以上错误，     ## 解决方案1：     npm install">
+<meta name="keywords" content="技术分享,react,配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react 项目配置">
+<meta property="og:url" content="https://libenzhneg.github.io/2019/05/06/react-项目配置/index.html">
+<meta property="og:site_name" content="李本正技术博客">
+<meta property="og:description" content="注意事项（报错）npm install -g cnpm --registry=https://registry.npm.taobao.org &amp;apos;react-scripts&amp;apos; 不是内部或外部命令，也不是可运行的程序 或批处理文件。      // 有时在安装完其他组件后，再次运行 npm start 命令时会报以上错误，     ## 解决方案1：     npm install">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-06T09:06:28.774Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react 项目配置">
+<meta name="twitter:description" content="注意事项（报错）npm install -g cnpm --registry=https://registry.npm.taobao.org &amp;apos;react-scripts&amp;apos; 不是内部或外部命令，也不是可运行的程序 或批处理文件。      // 有时在安装完其他组件后，再次运行 npm start 命令时会报以上错误，     ## 解决方案1：     npm install">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="李本正技术博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>react 项目配置 | 李本正技术博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: 
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Benzheng Li</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">技术分享的启程</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/index/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">分类标签</a></li>
+                        
+                            <li><a href="/archives/">随笔</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GRASP/">GRASP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM/">MVVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/功能/">功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小程序/">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享/">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享的启程/">技术分享的启程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组件化/">组件化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/配置/">配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面对对象/">面对对象</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Benzheng Li</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Benzheng Li</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">技术分享的启程</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/index/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">分类标签</a></li>
+                
+                    <li><a href="/archives/">随笔</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
+</nav>
+      <div class="body-wrap"><article id="post-react-项目配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/06/react-项目配置/" class="article-date">
+      <time datetime="2019-05-06T08:47:17.000Z" itemprop="datePublished">2019-05-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      react 项目配置
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端框架/">前端框架</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享/">技术分享</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/配置/">配置</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="注意事项（报错）"><a href="#注意事项（报错）" class="headerlink" title="注意事项（报错）"></a>注意事项（报错）</h3><pre><code>npm install -g cnpm --registry=https://registry.npm.taobao.org
+&apos;react-scripts&apos; 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+    // 有时在安装完其他组件后，再次运行 npm start 命令时会报以上错误，
+    ## 解决方案1：
+    npm install react-scripts
+    安装完成后再次运行 npm start 即可
+    ## 解决方案2：
+    删除modules 文件
+    npm install
+    安装完成后再次运行 npm start 即可
+</code></pre><h3 id="安装的单词缩写"><a href="#安装的单词缩写" class="headerlink" title="安装的单词缩写"></a>安装的单词缩写</h3><pre><code>==&gt; i = install （安装）
+&gt; -g = global (全局)
+
+&gt; -S = --save (发布到开发环境)
+
+&gt; -D = --save-dev (发布到生产环境)
+</code></pre><h3 id="引入了三个库文件"><a href="#引入了三个库文件" class="headerlink" title="引入了三个库文件"></a>引入了三个库文件</h3><pre><code>react.min.js - React 的核心库
+react-dom.min.js - 提供与 DOM 相关的功能
+babel.min.js - Babel 可以将 ES6 代码转为 ES5 代码，这样我们就能在目前不支持 ES6 浏览器上执行 React 代码。Babel 内嵌了对 JSX 的支持。通过将 Babel 和 babel-sublime 包（package）一同使用可以让源码的语法渲染上升到一个全新的水平。
+</code></pre><h3 id="安装公共仓库"><a href="#安装公共仓库" class="headerlink" title="安装公共仓库"></a>安装公共仓库</h3><pre><code>###### npm i redux -S
+
+创建 store -&gt; index.js  reducer.js  actionCreators.js  actionTypes.js
+
+// index.js (调试工具&gt;安装 REDUX_DEVTOOLS)
+
+import { createStore } from &apos;redux&apos;;
+import reducer from &apos;./reducer&apos;;
+
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; window.__REDUX_DEVTOOLS_EXTENSION__());
+export default store;
+
+// actionTypes.js  
+export const CHANGE_INPUT_VALUE = &apos;change-inpue-value&apos;;
+
+// actionCreators.js      
+import { CHANGE_INPUT_VALUE } from &apos;./actionTypes&apos;;
+export const getInputChangeAction = (value) =&gt; ({
+    type: CHANGE_INPUT_VALUE,
+    value
+});
+
+//  reducer.js
+import { CHANGE_INPUT_VALUE } from &apos;./actionTypes&apos;;
+const defaultState = {
+    inputValue: &apos;222&apos;,
+    list: [&apos;ewewee&apos;,&apos;ewewe&apos;]
+};
+export default (state = defaultState, action) =&gt; {
+    if (action.type === CHANGE_INPUT_VALUE) {
+        const NewState = JSON.parse(JSON.stringify(state));
+        NewState.inputValue = action.value;
+        return NewState;
+    }
+    return state;
+}
+
+
+// 组件调用
+
+import store from &apos;./store/index&apos;
+import { getInputChangeAction } from &apos;./store/actionCreators&apos;;
+
+constructor(props) {
+    super(props);
+    console.log(store.getState())
+    this.state = {
+
+    }
+    this.chageget = this.chageget.bind(this)
+    store.subscribe(this.chageget) // 数据改变是更新
+}
+
+chageget() {
+    console.log(store.getState())
+}
+
+// 获取数据
+
+store.getState()
+
+ // 添加数据
+
+handleInputValue(event) {
+&lt;!--const action = {--&gt;
+&lt;!--  type: &apos;change_input_value&apos;,--&gt;
+&lt;!--  value: event.target.value--&gt;
+&lt;!--}--&gt;
+const action = getInputChangeAction(event.target.value);
+store.dispatch(action);
+};
+</code></pre><h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h3><pre><code>数据放入缓存
+localStorage.setItem(&apos;user&apos;,values.username);
+
+缓存中取数据
+localStorage.getItem(&apos;user&apos;);
+</code></pre><h6 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h6><p>npm i react-redux -S</p>
+<h6 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h6><p>npm i redux-thunk -S</p>
+<pre><code>// index.js (调试工具&gt;安装 REDUX_DEVTOOLS)
+import { createStore, applyMiddleware, compose } from &apos;redux&apos;;
+import thunk from &apos;redux-thunk&apos;;
+import reducer from &apos;./reducer&apos;;
+
+const composeEnhancers =  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
+const enhancer = composeEnhancers(
+    applyMiddleware(thunk),
+)
+const store = createStore(reducer,enhancer);
+export default store;
+
+// actionCreators.js
+import { CHANGE_INPUT_VALUE } from &apos;./actionTypes&apos;;
+import axios from &apos;axios&apos;;  
+export const getInputChangeAction = (value) =&gt; ({
+type: CHANGE_INPUT_VALUE,
+value
+});
+export const getList = () =&gt; {
+return (dispatch) =&gt; {
+    axios.get(url ,{page: 1, limit: 10, token:token}).then((res)=&gt;{
+        const data = res.data.data.list;
+        const action = getInputChangeAction(data);
+        dispatch(action);
+    })
+}
+}
+
+ // 组件调用
+import store from &apos;./store/index&apos;;
+import { getInputChangeAction, getList } from &apos;./store/actionCreators&apos;;
+
+getList() {
+const action = getList();
+store.dispatch(action);
+}
+
+
+npm i redux-sage -S
+</code></pre><h6 id="安装路由-react-router-dom"><a href="#安装路由-react-router-dom" class="headerlink" title="安装路由 react-router-dom"></a>安装路由 react-router-dom</h6><p>npm i react-router-dom  -S</p>
+<pre><code>// index.js 入口文件
+import React from &apos;react&apos;;
+import ReactDOM from &apos;react-dom&apos;;
+import &apos;antd/dist/antd.css&apos;;   // 框架样式
+import &apos;./index.css&apos;;       // 自定义样式
+import Index from &apos;./view/common/index&apos;;  // 首页的路径
+import { BrowserRouter } from &apos;react-router-dom&apos;; // 路由文件
+// HashRouter 和 BrowserRouter 都能实现跳转  HashRouter 前多个 #
+
+ReactDOM.render(
+    // 必须要包住路径才能实现跳转
+    &lt;BrowserRouter&gt; 
+        &lt;Index /&gt;
+    &lt;/BrowserRouter&gt;
+, document.getElementById(&apos;root&apos;));
+
+
+// 新建 router -&gt;index.js
+import React from &apos;react&apos;;
+import {Switch, Route, Redirect} from &apos;react-router-dom&apos;;
+import Index from &apos;../view/index/index&apos;;
+
+export default class Routers extends React.Component{
+    render() {
+        return(
+            &lt;Switch&gt;
+                &lt;Route path=&quot;/&quot; exact render={()=&gt;(&lt;Redirect to=&quot;/index&quot; /&gt;)}/&gt;
+                &lt;Route path=&quot;/index&quot; component={Index}/&gt;
+            &lt;/Switch&gt;
+        )
+    }
+}
+
+方法跳转：
+
+this.props.history.push(&apos;/download&apos;)
+跳转到外链：
+
+window.location.href = &apos;https://你的url&apos;
+</code></pre><h6 id="数据获取-axios"><a href="#数据获取-axios" class="headerlink" title="数据获取 axios"></a>数据获取 axios</h6><pre><code>npm i axios  -S
+
+在package.json中
+  &quot;proxy&quot;: &quot;http://service.n.co&quot;
+
+
+import React from &apos;react&apos;;
+import { Table } from &apos;antd&apos;; // antd UL
+import axios from &apos;axios&apos;;  
+
+export default class User extends React.Component{
+  constructor(props){
+    super(props)
+    this.state={
+      data: []
+
+    }
+  };
+    componentWillReceiveProps(){
+        this.getData();
+    }
+    getData(){
+      let that = this;
+      axios.get(&apos;/backend/account/index&apos;,{page: 1, limit: 10, token:token})
+      .then((res)=&gt;{
+          that.setState({data:res.data.data.list})
+      })
+      .catch((error)=&gt;{
+      });
+    };
+
+    render() {
+        return(
+            &lt;Table dataSource={this.state.data} rowKey=&quot;id&quot; /&gt;
+        )
+    }
+}
+</code></pre><h3 id="antd-ul-安装"><a href="#antd-ul-安装" class="headerlink" title="antd ul 安装"></a>antd ul 安装</h3><pre><code>npm i antd  -S
+
+https://ant.design/docs/react/use-with-create-react-app-cn
+</code></pre><h3 id="安装：开发环境"><a href="#安装：开发环境" class="headerlink" title="安装：开发环境"></a>安装：开发环境</h3><h5 id="修改配置环境-以适应antd-官网参考"><a href="#修改配置环境-以适应antd-官网参考" class="headerlink" title="修改配置环境,以适应antd(官网参考)"></a>修改配置环境,以适应antd(官网参考)</h5><pre><code>npm i react-app-rewired -D
+
+npm i babel-plugin-import -D  // 按需加载 
+</code></pre><h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><pre><code>//站位符可以替代最外围标签
+
+    &lt;Fragment&gt;
+
+//构造函数
+
+    constructor(props) {
+    super(props); //调用方法
+    this.state = { // 组件状态
+        }
+    }
+
+// 展开运算符
+
+    this.setState({
+                list: [...this.state.list, this.state.inputVal ],
+                inputVal: &apos;&apos;
+            })
+
+// immutable
+// state 不予许我们做任何改变
+
+// 转意
+dangerouslySetInnerHTML={{__html: item }}
+
+//  lable 标签
+
+    &lt;label htmlFor=&quot;inp&quot;&gt;输入类容&lt;/label&gt;
+                &lt;input id=&quot;inp&quot; className=&quot;input&quot; value={this.state.inputVal} onChange={this.changInput.bind(this)} /&gt;
+                &lt;button onClick={this.btnClick.bind(this)}&gt;提交&lt;/button&gt;
+</code></pre><h3 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h3><pre><code>// 绑定事件
+this.btnClick = this.btnClick.bind(this);
+
+// 循环渲染封装方法
+
+getList() {
+    return this.state.list.map((item, index) =&gt; {
+        return (
+            &lt;List 
+                key={index}
+                content={item}  // 向子组件传值
+                index={index}
+                del={this.del}// 向子组件传方法
+            /&gt;
+        )
+    })
+}
+// 子组件调用
+render() {
+    const { content } = this.props;
+    return(
+        &lt;div onClick={this.leClick}&gt;
+            {content}
+        &lt;/div&gt;
+    )
+}
+
+leClick() {
+    const { del, index } = this.props;
+    del(index);
+}
+
+// es6改变状态值方法
+
+this.setState((prevState) =&gt; ({
+        list: [...prevState.list, prevState.inputVal ],
+        inputVal: &apos;&apos;
+    }));
+
+    del(index) {
+    this.setState((prevState) =&gt; {
+        let list = [...prevState.list];
+        list.splice(index, 1);
+        return {list}
+    });
+}
+</code></pre><p>// 传值类型</p>
+<pre><code>npm install --save prop-types
+    import PropTypes from &apos;prop-types&apos;;
+    List.propTypes = {
+        test: PropTypes.string.isRequired, //必须传
+        test: PropTypes.arrayOf(PropTypes.string, PropTypes.number), // 或者
+        content: PropTypes.string,
+        del: PropTypes.func,
+        index: PropTypes.number
+    }
+    // 默认值
+    List.defaultProps = {
+    test: &apos;hello&apos;
+}
+</code></pre><h3 id="调试工具"><a href="#调试工具" class="headerlink" title="调试工具"></a>调试工具</h3><pre><code>Reactdevelopertools  REDUX_DEVTOOLS
+安装及使用
+
+谷歌浏览器 =&gt; 更多工具 =&gt; 扩展程序 =&gt; 打开谷歌应用商店 =&gt; 搜索 react =&gt; 安装
+=&gt; 浏览器中打开开发者工具 =&gt; react
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/05/06/react-项目配置/">react 项目配置</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Benzheng Li</a></p>
+        <p><span>发布时间:</span>2019-05-06, 16:47:17</p>
+        <p><span>最后更新:</span>2019-05-06, 17:06:28</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/06/react-项目配置/" title="react 项目配置">https://libenzhneg.github.io/2019/05/06/react-项目配置/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://libenzhneg.github.io/2019/05/06/react-项目配置/　　作者: Benzheng Li" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2019/05/06/vue-实用功能/">
+                    vue 实用功能
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2019/05/06/小程序方法总结/">
+                    小程序方法总结
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项（报错）"><span class="toc-number">1.</span> <span class="toc-text">注意事项（报错）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装的单词缩写"><span class="toc-number">2.</span> <span class="toc-text">安装的单词缩写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引入了三个库文件"><span class="toc-number">3.</span> <span class="toc-text">引入了三个库文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装公共仓库"><span class="toc-number">4.</span> <span class="toc-text">安装公共仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存"><span class="toc-number">5.</span> <span class="toc-text">缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#插件"><span class="toc-number">5.0.0.1.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#中间件"><span class="toc-number">5.0.0.2.</span> <span class="toc-text">中间件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#安装路由-react-router-dom"><span class="toc-number">5.0.0.3.</span> <span class="toc-text">安装路由 react-router-dom</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#数据获取-axios"><span class="toc-number">5.0.0.4.</span> <span class="toc-text">数据获取 axios</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#antd-ul-安装"><span class="toc-number">6.</span> <span class="toc-text">antd ul 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装：开发环境"><span class="toc-number">7.</span> <span class="toc-text">安装：开发环境</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#修改配置环境-以适应antd-官网参考"><span class="toc-number">7.0.1.</span> <span class="toc-text">修改配置环境,以适应antd(官网参考)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法："><span class="toc-number">8.</span> <span class="toc-text">语法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码优化"><span class="toc-number">9.</span> <span class="toc-text">代码优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调试工具"><span class="toc-number">10.</span> <span class="toc-text">调试工具</span></a></li>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"react 项目配置　| 李本正技术博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/05/06/vue-实用功能/" title="上一篇: vue 实用功能">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2019/05/06/小程序方法总结/" title="下一篇: 小程序方法总结">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/07/组件化的优势和意义/">组件化的优势和意义</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/07/从-MVC-到-MVVM/">从 MVC 到 MVVM 模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/07/什么是面对对象思想/">什么是面对对象思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/07/GRASP-九大原则简单理解/">GRASP 九大原则简单理解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/vue-实用功能/">vue 实用功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/react-项目配置/">react 项目配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/小程序方法总结/">小程序方法总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/react-问题解答/">react 基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/我个人博客的第一篇博客，哈哈哈/">我个人博客的第一篇博客，哈哈哈</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2019 Benzheng Li
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit" title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+            
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
