@@ -182,7 +182,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GRASP/">GRASP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM/">MVVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/功能/">功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小程序/">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享/">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享的启程/">技术分享的启程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组件化/">组件化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/配置/">配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面对对象/">面对对象</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GRASP/">GRASP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM/">MVVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/功能/">功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小程序/">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享/">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享的启程/">技术分享的启程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组件化/">组件化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/配置/">配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面对对象/">面对对象</a></li></ul>
                     </div>
                 </section>
                 
@@ -256,6 +256,104 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-现代前端框架和-jQuery-库的比较" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/07/现代前端框架和-jQuery-库的比较/" class="article-date">
+      <time datetime="2019-05-07T08:43:18.000Z" itemprop="datePublished">2019-05-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/07/现代前端框架和-jQuery-库的比较/">现代前端框架和 jQuery 库的比较</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="现代前端框架和传统-jQuery-库的⽐比较"><a href="#现代前端框架和传统-jQuery-库的⽐比较" class="headerlink" title="现代前端框架和传统 jQuery 库的⽐比较"></a>现代前端框架和传统 jQuery 库的⽐比较</h3><h3 id="现代前端框架代表（angular-vue-react都是基于MVVM思想设计的框架）"><a href="#现代前端框架代表（angular-vue-react都是基于MVVM思想设计的框架）" class="headerlink" title="现代前端框架代表（angular, vue, react都是基于MVVM思想设计的框架）"></a>现代前端框架代表（angular, vue, react都是基于MVVM思想设计的框架）</h3><pre><code>数据操作视图
+
+    通过对象将数据和View完全分离开来了。对数据进行操作不再需要引用相应的DOM对象，可以说数据和View是分离的，他们通过对象这个vm实现相互的绑定。这就是传说中的MVVM
+
+单页面应用
+</code></pre><h3 id="jQuery-库-依然最流行的web前端js库"><a href="#jQuery-库-依然最流行的web前端js库" class="headerlink" title="jQuery 库(依然最流行的web前端js库)"></a>jQuery 库(依然最流行的web前端js库)</h3><pre><code>Dom 操作
+
+    jQuery是使用选择器（$）选取DOM对象，对其进行赋值、取值、事件绑定等操作，其实和原生的js的区别只在于可以更方便的选取和操作DOM对象，而数据和界面是在一起的
+
+多页应用
+</code></pre><h3 id="angular"><a href="#angular" class="headerlink" title="angular"></a>angular</h3><pre><code>angular不太了解...(不做分析)
+
+1.  模板功能强大丰富，自带了极其丰富的angular指令。
+
+2. 自定义指令，自定义指令后可以在项目中多次使用。
+</code></pre><h3 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h3><pre><code>1. vue的思想是响应式的，
+
+2. 也就是基于是数据可变的，
+
+3. 通过对每一个属性建立Watcher来监听，当属性变化的时候，响应式的更新对应的虚拟dom
+
+4. vue是把html，css，js组合到一起，用各自的处理方式
+
+5. 简单的语法及项目搭建 
+
+6. 更快的渲染速度和更小的体积
+</code></pre><h3 id="react"><a href="#react" class="headerlink" title="react"></a>react</h3><pre><code>1. react整体是函数式的思想
+
+2. 把组件设计成纯组件，状态和逻辑通过参数传入，
+
+3. 单向数据流，react在setState之后会重新走渲染的流程
+
+4. react的思路通过js来生成dom，所以设计了jsx，
+
+5. Virtual Dom这种新颖的思路
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端框架/">前端框架</a><a class="article-category-link" href="/categories/前端框架/理论知识/">理论知识</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享/">技术分享</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-组件化的优势和意义" class="article article-type-post" itemscope itemprop="blogPost">
   
