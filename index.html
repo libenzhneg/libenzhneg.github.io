@@ -293,7 +293,7 @@
         {bookData.map((item, index) =&gt; {
             return (
                 &lt;List key={item.novel.id} content={item.novel}&gt;
-                    &lt;strong className={isDelBtnShow ? &apos;&apos; : &apos;none&apos;}&gt;
+                    &lt;strong&gt;
                         &lt;Checkbox key={item.novel.id} checked={item.checked} onClick={e =&gt; this.delBtn(item.novel.id, e.target.checked, index)} /&gt;
                     &lt;/strong&gt;
                     &lt;p&gt;来源：{item.platform.title}&lt;/p&gt;

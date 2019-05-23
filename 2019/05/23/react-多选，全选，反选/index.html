@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="李本正技术博客">
 <meta property="og:description" content="这是 antd-mobile 框架的样式(也可以是正常的多选框)render() {     const { bookData, isCheckAll } = this.state     return (         &amp;lt;Checkbox key=&amp;quot;-1&amp;quot; checked={isCheckAll} onChange={this.checkAll.bind(this)}">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-23T02:47:59.753Z">
+<meta property="og:updated_time" content="2019-05-23T02:49:48.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react 多选，全选，反选">
 <meta name="twitter:description" content="这是 antd-mobile 框架的样式(也可以是正常的多选框)render() {     const { bookData, isCheckAll } = this.state     return (         &amp;lt;Checkbox key=&amp;quot;-1&amp;quot; checked={isCheckAll} onChange={this.checkAll.bind(this)}">
@@ -305,7 +305,7 @@
         {bookData.map((item, index) =&gt; {
             return (
                 &lt;List key={item.novel.id} content={item.novel}&gt;
-                    &lt;strong className={isDelBtnShow ? &apos;&apos; : &apos;none&apos;}&gt;
+                    &lt;strong&gt;
                         &lt;Checkbox key={item.novel.id} checked={item.checked} onClick={e =&gt; this.delBtn(item.novel.id, e.target.checked, index)} /&gt;
                     &lt;/strong&gt;
                     &lt;p&gt;来源：{item.platform.title}&lt;/p&gt;
@@ -366,7 +366,7 @@
         <p><span>本文标题:</span><a href="/2019/05/23/react-多选，全选，反选/">react 多选，全选，反选</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Benzheng Li</a></p>
         <p><span>发布时间:</span>2019-05-23, 10:28:34</p>
-        <p><span>最后更新:</span>2019-05-23, 10:47:59</p>
+        <p><span>最后更新:</span>2019-05-23, 10:49:48</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/05/23/react-多选，全选，反选/" title="react 多选，全选，反选">https://libenzhneg.github.io/2019/05/23/react-多选，全选，反选/</a>
             <span class="copy-path" data-clipboard-text="原文: https://libenzhneg.github.io/2019/05/23/react-多选，全选，反选/　　作者: Benzheng Li" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
