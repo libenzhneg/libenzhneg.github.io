@@ -257,6 +257,330 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-react-问题解答" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/06/react-问题解答/" class="article-date">
+      <time datetime="2019-05-06T04:01:45.000Z" itemprop="datePublished">2019-05-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/06/react-问题解答/">react 基础知识</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>react 特点</p>
+<ul>
+<li>声名式开发    </li>
+<li>可以与其他框架并存</li>
+<li>组件化</li>
+<li>单向流数据</li>
+<li>视图层框架</li>
+<li>函数式编程</li>
+</ul>
+<h5 id="props-state-render"><a href="#props-state-render" class="headerlink" title="props, state render"></a>props, state render</h5><pre><code>state 和 props 中数据改变render函数 执行
+父组件的render函数重新执行的时候子组件的render 也会执行
+</code></pre><h5 id="虚拟DOM-（js-对象，js-和-js-比较不耗性能，-真实dom-对比比较耗性能-）"><a href="#虚拟DOM-（js-对象，js-和-js-比较不耗性能，-真实dom-对比比较耗性能-）" class="headerlink" title="虚拟DOM （js 对象，js 和 js 比较不耗性能， 真实dom 对比比较耗性能 ）"></a>虚拟DOM （js 对象，js 和 js 比较不耗性能， 真实dom 对比比较耗性能 ）</h5><pre><code>1. state数据
+2. JSX模版
+3. 数据+模版结合,生成真实的DoM,来显示
+4. state发生改变
+5. 数据+模版结合,生成真实的DOM,替换原始的DOM
+
+缺陷：
+数据改变完整替换DOM,非常好性能
+
+解决方案1：
+
+5. 数据+模版结合,生成真实的DOM,并不直接替换原始的DOM
+6. 新的DOM (DoucumentFragment) 和原始的DOM做比对,找差异
+7. 找出input框发生了变化
+8. 只用新的DOM中的input元素,替换掉老的DOM中的input元素
+
+解决方案2：（推荐）
+
+1. state数据 
+2. JSX模版 
+3· 生成虚拟DOM (虚拟DOM就是一个JS对象,用它来描述真实DOM)
+[&apos;div&apos;, (id: &apos;abc&apos;}, [&apos;span&apos;, t), &apos;hello world&apos;]]
+4. 用虚拟DOM生成真实的DOM,来显示
+&lt;div id=&apos;abc&apos;&gt;&lt;span&gt;hello world&lt;/span&gt;&lt;/div&gt;
+5. state发生变化 
+6. 数据+模版 结合,生成新的虚拟DOM
+[&apos;div&apos;, (id: &apos;abc&apos;}, [&apos;span&apos;, t), &apos;bye bye&apos;]]
+7. 比较原始虚拟DOM和新的虚拟DOM的区别,找到区别的内容（提升性能）diff 算法
+8. 直接操作DOM,改变span中的内容
+
+
+render() {
+const { content, test }= this.props;
+// JSx-&gt; createELemnt-&gt; 虚拟DOM (JS对象) -&gt;真实的DOM
+return (&lt;div&gt;&lt;span&gt;item&lt;/span&gt;&lt;/div&gt;
+return React.createELement(&apos;div&quot;, {}, React.createELement(&apos;span&apos;, {}, &apos;dddd&apos;)
+}
+
+优点：
+1. 性能提升
+2. 它能跨端应用得以实现
+</code></pre><h5 id="虚拟DOM-diff-（原始虚拟DOM和新的虚拟DOM的区别比对）"><a href="#虚拟DOM-diff-（原始虚拟DOM和新的虚拟DOM的区别比对）" class="headerlink" title="虚拟DOM  diff （原始虚拟DOM和新的虚拟DOM的区别比对）"></a>虚拟DOM  diff （原始虚拟DOM和新的虚拟DOM的区别比对）</h5><pre><code>1. 同层比对
+2. 不能用 key={index}作为key 值 （item,用它本身做key值）
+3. setdata 可以吧多次比对合并成一次比对
+</code></pre><h5 id="监听获取输入同步-react-ref-获取dom-（onChange）"><a href="#监听获取输入同步-react-ref-获取dom-（onChange）" class="headerlink" title="监听获取输入同步  react ref (获取dom) （onChange）"></a>监听获取输入同步  react ref (获取dom) （onChange）</h5><pre><code>&lt;input className=&quot;search-input fl&quot; type=&quot;search&quot; onChange={this.handlechange.bind(this)}  onKeyUp={this.onKeyup.bind(this)}/&gt;
+
+
+handlechange(event) {
+    let val = event.target.value.replace(/^\s+|\s+$/g,&quot;&quot;);
+    this.setState(() =&gt; ({ keyword: val }));
+};
+
+onKeyup(e) {
+    if(e.keyCode === 13) {
+        if (this.state.keyword.length &gt; 1) {
+            this.setState(() =&gt; ({page: 1 }));
+            this.getData()
+        }
+    }
+}
+
+
+&lt;form className=&quot;form-menu&quot; ref=&quot;form&quot;&gt;
+&lt;label&gt;&lt;i&gt;*&lt;/i&gt;作品名称:&lt;/label&gt;
+&lt;input className=&quot;input-border&quot; defaultValue={title} ref=&quot;title&quot;/&gt;
+&lt;button type=&quot;button&quot; className=&quot;submit&quot; onClick={this.submitFun.bind(this)}&gt;{this.state.modalTitle}&lt;/button&gt;
+&lt;/form&gt;
+
+ // 表单提交
+    submitFun() {
+        const {formData} = this.state;
+        const { title } = this.refs;
+        const inputData = {};
+        if (title.value.length &lt; 2) {
+            this.setState(() =&gt; ({hint: &apos;作品名称不能少于2个字符&apos; }));
+        } else {
+            inputData.title =  title.value;
+            if(formData.id) {
+                inputData.id = formData.id;
+                this.edit(BACKEND_UPDATA_URL, inputData);
+                return 
+            }
+            this.setState(() =&gt; ({formData: inputData }));
+            this.add(BACKEND_CREATE_URL, inputData)
+        }
+    };
+
+  父组件调用子组件中的方法
+
+    子组件
+
+    import React from &apos;react&apos;;
+
+    export default class Message extends React.Component {
+    constructor(props) {
+    super(props);
+    this.state = {
+        message: &apos;&apos;
+    }
+
+    };
+    componentDidMount() { 
+    this.props.onRef(this) 
+    } 
+    reminding(ms) {
+    this.setState(() =&gt; ({ message: ms}));
+        setTimeout(() =&gt; { 
+            this.setState(() =&gt; ({ message: &apos;&apos; })) 
+        },3000 )
+    }
+    render() { 
+        return (
+            &lt;p className={this.state.message.length &gt; 0 ? &quot;message-hint-active&quot; : &apos;message-hint&apos; }&gt;{this.state.message}&lt;/p&gt;
+            ) 
+        }
+    }
+
+
+    父组件：
+
+     &lt;Message onRef={this.onRef} /&gt;
+
+    onRef = (ref) =&gt; {
+        this.Message = ref
+    }
+
+    that.Message.reminding(res.data.message)
+</code></pre><h5 id="setSate-函数的方法（异步方法）"><a href="#setSate-函数的方法（异步方法）" class="headerlink" title="setSate 函数的方法（异步方法）"></a>setSate 函数的方法（异步方法）</h5><pre><code>this.setSate((prevState) =&gt; ({
+    list: [...prevState.list, inputValue],
+    inputValue: &apos; &apos;
+}), () =&gt; {
+    // 回调方法执行完数据存储后执行可以获取刚才同步的数据
+})
+</code></pre><h5 id="生命周期函数（组件自动调用的函数）"><a href="#生命周期函数（组件自动调用的函数）" class="headerlink" title="生命周期函数（组件自动调用的函数）"></a>生命周期函数（组件自动调用的函数）</h5><pre><code>1. constructor()
+    es6 语法自带构造函数
+
+组件挂载
+
+1、componentWillMount()
+
+    页面挂载之前调用，以后组件更新不调用，只调用一次，此时可以修改state。
+
+2、 render()
+
+    react最重要的步骤，创建虚拟dom，进行diff算法，更新dom树都在此进行。此时就不能更改state了。
+
+3、componentDidMount()
+
+    组件挂载之后调用，组件渲染之后调用，只调用一次。
+
+
+组件更新
+
+componentWillReceiveProps(nextProps)
+    组件接受新的props时调用。
+    组件从父组件接收参数(第一次不会执行)
+    父组件render 重新执行了才被执行
+
+   props 更新                  state 更新
+
+    1. componentWillUpdata(nextProps, nextState) // 需要返回一个bloo (true, false)
+
+        组件更新之前时才调用，此时可以修改state
+
+    2. shouldComponentUpdate(nextProps, nextState)
+
+        组件更新之前时才调用，(componentWillUpdata 之后执行)
+        react性能优化非常重要的一环。组件接受新的state或者props时调用，我们可以设置在此对比前后两个props和state是否相同，如果相同则返回false阻止更新，因为相同的属性状态一定会生成相同的dom树，这样就不需要创造新的dom树和旧的dom树进行diff算法对比，节省大量性能，尤其是在dom结构复杂的时候
+
+    3. render()
+        组件渲染
+
+    4. componentDidUpdate()
+
+        组件更新完成后调用，此时可以获取dom节点。
+
+组件卸载：
+
+componentWillUnmount()
+
+    组件将要卸载时调用，一些事件监听和定时器需要在此时清除。
+
+
+
+默认设置:
+
+1、getDefaultProps()
+
+    设置默认的props，也可以用dufaultProps设置组件的默认属性.
+
+2、getInitialState()
+
+    在使用es6的class语法时是没有这个钩子函数的，可以直接在constructor中定义this.state。此时可以访问this.props
+</code></pre><h5 id="React-css-动画效果"><a href="#React-css-动画效果" class="headerlink" title="React css 动画效果"></a>React css 动画效果</h5><pre><code>&lt;p className={this.state.message.length &gt; 0 ? &quot;show&quot; : &apos;hind&apos; }&gt;{this.state.message}&lt;/p&gt;
+
+显示隐藏
+  .show {transition: all 1s ease-in;opacity: 0;}
+  .hind {transition: all 1s ease-in; opacity: 1;}
+
+显示隐藏变色 
+
+  .show {opacity: 1;transition: all 1s ease-in;}
+  .hide {animation: hide-item 2s ease-in forwards;}
+  @keyframes hide-item {
+  0% {
+       opacity: 1;color: red;
+  }
+  50% {
+  opacity: 0.5;color: green;
+
+  }
+  100% {
+  opacity: 0;color: blue;
+  }
+
+第三方动画模块 react-transition-group
+地址： https://reactcommunity.org/react-transition-group/
+</code></pre><h5 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h5><p> 基本原则：</p>
+<pre><code>1. store 是唯一的
+2. 只有store能够改变自己的内容 
+2. reducer: 必须是纯函数 （给定固定的函数，就会有固定的输出，不会有任何副作用(不能对参数进行修改，)
+</code></pre><p>核心API</p>
+<pre><code>createStore             创建store
+store.dispath           更新上传 
+store.getState          获取
+store.subscribe         改变时触发
+</code></pre><h5 id="组件："><a href="#组件：" class="headerlink" title="组件："></a>组件：</h5><pre><code>子组件直接调用父组件方法 
+
+    &lt;div onClick={(index) =&gt; {this.props.handlechange(index)}}&gt;&lt;/div&gt;
+</code></pre><ol>
+<li>普通组件 （逻辑和渲染都在一个组件）</li>
+<li>ul组件 （少量的逻辑 + 无状态组件）</li>
+<li>容器组件（逻辑）</li>
+<li>无状态组件 （渲染不加逻辑处理）</li>
+</ol>
+<pre><code>//  无状态组件
+import React, { Component } from &apos;react&apos;;
+const TodoListUI = (props)=&gt; {
+return (
+&lt;div&gt; 
+&lt;div&gt;&lt;Inputvalue {props. inputValue) 
+onChange {props.handLeInputChange}/&gt;
+&lt;Button onclick={props.handleBtnclick) /div&gt;
+&lt;/div）
+</code></pre><h5 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h5><pre><code>redux-thunk
+
+1. store -&gt; action 可以是函数和对象
+2. store -&gt; dispath 方法的升级
+
+redux-sage
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端框架/">前端框架</a><a class="article-category-link" href="/categories/前端框架/React/">React</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享/">技术分享</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-我个人博客的第一篇博客，哈哈哈" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
