@@ -261,7 +261,7 @@
   
     <div class="article-meta">
       <a href="/2019/05/23/react-多选，全选，反选/" class="article-date">
-      <time datetime="2019-05-23T02:28:34.833Z" itemprop="datePublished">2019-05-23</time>
+      <time datetime="2019-05-23T02:28:34.000Z" itemprop="datePublished">2019-05-23</time>
 </a>
 
 
@@ -272,12 +272,21 @@
       <input type="hidden" class="isFancy">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/23/react-多选，全选，反选/">react 多选，全选，反选</a>
+    </h1>
+  
+
+      </header>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <hr>
-<p>title: react 多选，全选，反选<br>date: 2019-05-23 10:28:34<br>tags: [react, 技术分享, 功能]<br>categories: [前端框架, React]</p>
-<h3 id="这是-antd-mobile-框架的样式-也可以是正常的多选框"><a href="#这是-antd-mobile-框架的样式-也可以是正常的多选框" class="headerlink" title="这是 antd-mobile 框架的样式(也可以是正常的多选框)"></a>这是 antd-mobile 框架的样式(也可以是正常的多选框)</h3><pre><code>render() {
+        <h3 id="这是-antd-mobile-框架的样式-也可以是正常的多选框"><a href="#这是-antd-mobile-框架的样式-也可以是正常的多选框" class="headerlink" title="这是 antd-mobile 框架的样式(也可以是正常的多选框)"></a>这是 antd-mobile 框架的样式(也可以是正常的多选框)</h3><pre><code>render() {
     const { bookData, isCheckAll } = this.state
     return (
         &lt;Checkbox key=&quot;-1&quot; checked={isCheckAll} onChange={this.checkAll.bind(this)} /&gt;
@@ -301,6 +310,39 @@
         isCheckAll: false
     }
 }
+</code></pre><h3 id="全选："><a href="#全选：" class="headerlink" title="全选："></a>全选：</h3><pre><code>checkAll(event) {
+    const { bookData} = this.state
+    const isCheck = event.target.checked
+    const arr = bookData.map((item) =&gt; {
+        return item.novel.id
+    })
+    this.setState(prevState =&gt; ({
+        bookData: prevState.bookData.map(item =&gt;
+            ({...item, checked: isCheck })
+        )
+    }))
+    if(isCheck) {
+        this.setState({ isCheckAll: isCheck, checkData: arr })
+        return
+    }
+    this.setState({ isCheckAll: isCheck, checkData: [] })
+}
+</code></pre><h3 id="多选-反选："><a href="#多选-反选：" class="headerlink" title="多选 反选："></a>多选 反选：</h3><pre><code>delBtn(id, e, index) {
+    const { bookData, checkData } = this.state
+    const data = bookData
+    data[index].checked = e
+    this.setState({ bookData : data })
+    if (e === false) {
+        checkData.splice(checkData.findIndex(item =&gt; item === id), 1)
+        this.setState({ isCheckAll: e })
+    } else {
+        const checkId = checkData.concat(id)
+        this.setState({ checkData: checkId })
+        if(bookData.length === checkId.length) {
+            this.setState({ isCheckAll: true })
+        }
+    }
+}
 </code></pre>
       
     </div>
@@ -308,8 +350,16 @@
     <div class="article-info article-info-index">
       
       
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端框架/">前端框架</a><a class="article-category-link" href="/categories/前端框架/React/">React</a>
+    </div>
+
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/功能/">功能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享/">技术分享</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
