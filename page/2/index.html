@@ -182,7 +182,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GRASP/">GRASP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM/">MVVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/功能/">功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小程序/">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享/">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享的启程/">技术分享的启程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组件化/">组件化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/配置/">配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面对对象/">面对对象</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GRASP/">GRASP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM/">MVVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/功能/">功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小程序/">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享/">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术分享的启程/">技术分享的启程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组件/">组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组件化/">组件化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/配置/">配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面对对象/">面对对象</a></li></ul>
                     </div>
                 </section>
                 
@@ -256,6 +256,196 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-小程序方法总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/06/小程序方法总结/" class="article-date">
+      <time datetime="2019-05-06T08:32:57.000Z" itemprop="datePublished">2019-05-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/06/小程序方法总结/">小程序方法总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="小程序自定义函数"><a href="#小程序自定义函数" class="headerlink" title="小程序自定义函数"></a>小程序自定义函数</h3><pre><code>// 在需要的页面顶部引入
+&lt;wxs module=&quot;common&quot; src=&quot;../../utils/common.wxs&quot;&gt;&lt;/wxs&gt;
+// module  文件名  src 文件的路径
+
+{{common.subStrCut(introduce, 60)}}
+
+// 使用时 common 文件下的 subStrCut 方法 
+
+### common.wxs 
+
+/**
+ * 自定义过滤函数
+ */
+var filters = {
+  /**
+   * 字符串截取
+   * 
+   * str 需要截取的字符串
+   * len 字符需要截取的长度
+   * 
+   */
+  subStrCut: function (str, len) {
+    return str.substring(0, len);
+  },
+}
+// 输出对象
+module.exports = {
+  subStrCut: filters.subStrCut
+}
+</code></pre><h3 id="点击事件返回的参数"><a href="#点击事件返回的参数" class="headerlink" title="点击事件返回的参数"></a>点击事件返回的参数</h3><pre><code>##  wxml
+// data-id=&quot;{{ item.id }}&quot; 
+// data-index=&quot;{{ index }}&quot;
+// data-prefix=&quot;{{ item.prefix }}&quot;
+传参 (只有这边传了参数下面event 里面才能接受到)
+
+&lt;i-swipeout i-class=&quot;i-swipeout-demo-item&quot; wx:for=&quot;{{ list }}&quot; wx:key=&quot;{{ index }}&quot; wx:for-item=&quot;item&quot; data-id=&quot;{{ item.id }}&quot; data-index=&quot;{{ index }}&quot; data-prefix=&quot;{{ item.prefix }}&quot; bind:change=&quot;handleBtn&quot; actions=&quot;{{ actions }}&quot;&gt;
+    &lt;view slot=&quot;content&quot;&gt;
+      &lt;navigator wx:if=&quot;{{ item.history.hasHistory == true }}&quot; url=&apos;&apos;&gt;
+        &lt;image class=&quot;book-images&quot; src=&apos;https://bookcover.yuewen.com/qdbimg/349573/1011705052&apos;&gt;&lt;/image&gt;
+        &lt;i-cell title=&quot;{{ item.title }}&quot;&gt;&lt;/i-cell&gt;
+      &lt;/navigator&gt;   
+      &lt;navigator wx:else url=&apos;&apos;&gt;
+        &lt;image class=&quot;book-images&quot; src=&apos;https://bookcover.yuewen.com/qdbimg/349573/1011705052&apos;&gt;&lt;/image&gt;
+        &lt;i-cell title=&quot;{{ item.title }}&quot;&gt;&lt;/i-cell&gt;
+      &lt;/navigator&gt;
+      &lt;view class=&quot;trace&quot;&gt;上次读到：{{ item.history.chapter.title }}&lt;/view&gt;
+      &lt;view class=&quot;trace&quot;&gt;更新时间:&lt;/view&gt;
+    &lt;/view&gt;
+  &lt;/i-swipeout&gt;
+
+
+  &lt;!-- &lt;i-swipeout wx:for=&quot;{{ list }}&quot; wx:key=&quot;{{ index }}&quot; wx:for-item=&quot;item&quot; data-index=&quot;{{ index }}&quot; data-prefix=&quot;{{ item.prefix }}&quot; bind:change=&quot;handleBtn&quot; actions=&quot;{{ actions }}&quot;&gt;
+    &lt;view slot=&quot;content&quot;&gt;
+      &lt;i-cell title=&quot;{{ item.novel.title }}&quot; label=&quot;{{ item.novel.author }}&quot; value=&quot;{{ item.chapter.title }}&quot; is-link url=&quot;/pages/content/index?novelId={{item.novel.id}}&amp;code={{ item.prefix }}&amp;chapterId={{ item.chapter.id }}&amp;platformId={{ item.platform.id }}&quot;&gt;&lt;/i-cell&gt;
+    &lt;/view&gt;
+&lt;/i-swipeout&gt; --&gt;
+
+  ## js
+handleBtn: function (event) {
+    const index = event.target.dataset.index;
+    const novelId = event.target.dataset.id;
+    this.likePass(novelId, index);
+},
+</code></pre><h3 id="代码记录"><a href="#代码记录" class="headerlink" title="代码记录"></a>代码记录</h3><pre><code>   handleBtn: function (event) {
+   // const actionIndex = event.detail.index;
+   const index = event.target.dataset.index;
+   const novelId = event.target.dataset.id;
+   // const platformId = event.target.dataset.pid;
+   this.likePass(novelId, index);
+   // if (novelId &gt; 0) {
+   //   switch (actionIndex) {
+   //     case 0:
+   //       wx.navigateTo({ url: &apos;/pages/detail/index?id=&apos; + novelId + &apos;&amp;platformId=&apos; + platformId });      
+   //       break;
+   //     case 1:
+   //       this.likePass(novelId, index);
+   //       break;
+   //     default:
+   //   }
+   // }
+ },
+
+### 想数组后添加字段
+
+let contents = data.contents.concat(data.contents.unshift(title));
+</code></pre><h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h3><pre><code>操作     异步方法            同步方法
+插入     wx.setStorage        wx.setStorageSync
+读取     wx.getStorage        wx.getStorageSync
+删除     wx.removeStorage   wx.removeStorageSync
+清空     wx.clearStorage    wx.clearStorageSync
+获取（全部缓存信息）wx.getStorageInfo     wx.getStorageInfoSync
+
+Page({
+    save: function(e){
+    console.log(&apos;开始保存&apos;)
+    // 异步
+    wx.setStorage({
+      key: &apos;key1&apos;,
+      data: &apos;data1&apos;,
+      success: function(res){
+        console.log(&apos;异步保存成功&apos;)
+      }
+    })
+    // 获取缓存数据
+    const openId = wx.getStorageInfo(&apos;openId&apos;) 
+
+    // 同步缓存
+    wx.setStorageSync(&apos;key2&apos;, &apos;data2&apos;)
+    console.log(&apos;同步保存成功&apos;)
+  }
+})
+</code></pre><h3 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h3><pre><code>redirectTo：关闭当前页，跳转到指定页；
+navigateTo：保留当前页，跳转到指定页；
+switchTap：只能用于跳转到tabbar页面，并关闭其他非tabbar页面。
+
+onUnload: function () {
+    wx.redirectTo({
+      url: &apos;../index/index&apos;
+    })
+    wx.navigateTo({
+      url: &apos;../index/index&apos;
+    })
+    wx.switchTab({
+      url: &apos;../../member/member&apos;
+    })
+  },
+</code></pre><h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>&lt;img src=’<a href="https://upload-images.jianshu.io/upload_images/2210124-97d8396f573ed57e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/792" target="_blank" rel="noopener">https://upload-images.jianshu.io/upload_images/2210124-97d8396f573ed57e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/792</a> /&gt;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/小程序/">小程序</a><a class="article-category-link" href="/categories/小程序/前端框架/">前端框架</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小程序/">小程序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享/">技术分享</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-react-问题解答" class="article article-type-post" itemscope itemprop="blogPost">
   
